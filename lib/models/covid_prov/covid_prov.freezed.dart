@@ -20,8 +20,9 @@ CovidProv _$CovidProvFromJson(Map<String, dynamic> json) {
 class _$CovidProvTearOff {
   const _$CovidProvTearOff();
 
-  _CovidProv call({List<ListData?>? listData}) {
+  _CovidProv call({String? lastDate, List<ListData?>? listData}) {
     return _CovidProv(
+      lastDate: lastDate,
       listData: listData,
     );
   }
@@ -36,6 +37,7 @@ const $CovidProv = _$CovidProvTearOff();
 
 /// @nodoc
 mixin _$CovidProv {
+  String? get lastDate => throw _privateConstructorUsedError;
   List<ListData?>? get listData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,7 +50,7 @@ mixin _$CovidProv {
 abstract class $CovidProvCopyWith<$Res> {
   factory $CovidProvCopyWith(CovidProv value, $Res Function(CovidProv) then) =
       _$CovidProvCopyWithImpl<$Res>;
-  $Res call({List<ListData?>? listData});
+  $Res call({String? lastDate, List<ListData?>? listData});
 }
 
 /// @nodoc
@@ -61,9 +63,14 @@ class _$CovidProvCopyWithImpl<$Res> implements $CovidProvCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? lastDate = freezed,
     Object? listData = freezed,
   }) {
     return _then(_value.copyWith(
+      lastDate: lastDate == freezed
+          ? _value.lastDate
+          : lastDate // ignore: cast_nullable_to_non_nullable
+              as String?,
       listData: listData == freezed
           ? _value.listData
           : listData // ignore: cast_nullable_to_non_nullable
@@ -78,7 +85,7 @@ abstract class _$CovidProvCopyWith<$Res> implements $CovidProvCopyWith<$Res> {
           _CovidProv value, $Res Function(_CovidProv) then) =
       __$CovidProvCopyWithImpl<$Res>;
   @override
-  $Res call({List<ListData?>? listData});
+  $Res call({String? lastDate, List<ListData?>? listData});
 }
 
 /// @nodoc
@@ -92,9 +99,14 @@ class __$CovidProvCopyWithImpl<$Res> extends _$CovidProvCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? lastDate = freezed,
     Object? listData = freezed,
   }) {
     return _then(_CovidProv(
+      lastDate: lastDate == freezed
+          ? _value.lastDate
+          : lastDate // ignore: cast_nullable_to_non_nullable
+              as String?,
       listData: listData == freezed
           ? _value.listData
           : listData // ignore: cast_nullable_to_non_nullable
@@ -107,17 +119,19 @@ class __$CovidProvCopyWithImpl<$Res> extends _$CovidProvCopyWithImpl<$Res>
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class _$_CovidProv with DiagnosticableTreeMixin implements _CovidProv {
-  const _$_CovidProv({this.listData});
+  const _$_CovidProv({this.lastDate, this.listData});
 
   factory _$_CovidProv.fromJson(Map<String, dynamic> json) =>
       _$_$_CovidProvFromJson(json);
 
   @override
+  final String? lastDate;
+  @override
   final List<ListData?>? listData;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CovidProv(listData: $listData)';
+    return 'CovidProv(lastDate: $lastDate, listData: $listData)';
   }
 
   @override
@@ -125,6 +139,7 @@ class _$_CovidProv with DiagnosticableTreeMixin implements _CovidProv {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'CovidProv'))
+      ..add(DiagnosticsProperty('lastDate', lastDate))
       ..add(DiagnosticsProperty('listData', listData));
   }
 
@@ -132,6 +147,9 @@ class _$_CovidProv with DiagnosticableTreeMixin implements _CovidProv {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CovidProv &&
+            (identical(other.lastDate, lastDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.lastDate, lastDate)) &&
             (identical(other.listData, listData) ||
                 const DeepCollectionEquality()
                     .equals(other.listData, listData)));
@@ -139,7 +157,9 @@ class _$_CovidProv with DiagnosticableTreeMixin implements _CovidProv {
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listData);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(lastDate) ^
+      const DeepCollectionEquality().hash(listData);
 
   @JsonKey(ignore: true)
   @override
@@ -153,11 +173,14 @@ class _$_CovidProv with DiagnosticableTreeMixin implements _CovidProv {
 }
 
 abstract class _CovidProv implements CovidProv {
-  const factory _CovidProv({List<ListData?>? listData}) = _$_CovidProv;
+  const factory _CovidProv({String? lastDate, List<ListData?>? listData}) =
+      _$_CovidProv;
 
   factory _CovidProv.fromJson(Map<String, dynamic> json) =
       _$_CovidProv.fromJson;
 
+  @override
+  String? get lastDate => throw _privateConstructorUsedError;
   @override
   List<ListData?>? get listData => throw _privateConstructorUsedError;
   @override

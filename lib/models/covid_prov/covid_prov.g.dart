@@ -8,6 +8,7 @@ part of 'covid_prov.dart';
 
 _$_CovidProv _$_$_CovidProvFromJson(Map<String, dynamic> json) {
   return _$_CovidProv(
+    lastDate: json['last_date'] as String?,
     listData: (json['list_data'] as List<dynamic>?)
         ?.map((e) =>
             e == null ? null : ListData.fromJson(e as Map<String, dynamic>))
@@ -17,6 +18,7 @@ _$_CovidProv _$_$_CovidProvFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_CovidProvToJson(_$_CovidProv instance) =>
     <String, dynamic>{
+      'last_date': instance.lastDate,
       'list_data': instance.listData,
     };
 

@@ -16,13 +16,15 @@ class _DetailArtikelPageState extends State<DetailArtikelPage> {
   void initState() {
     super.initState();
     flutterWebViewPlugin.close();
-    flutterWebViewPlugin.onProgressChanged.listen((double progress) {
-      if (mounted) {
-        if (progress == 1.0) {
-          flutterWebViewPlugin.show();
+    flutterWebViewPlugin.onProgressChanged.listen(
+      (double progress) {
+        if (mounted) {
+          if (progress == 1.0) {
+            flutterWebViewPlugin.show();
+          }
         }
-      }
-    });
+      },
+    );
   }
 
   @override

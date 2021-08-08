@@ -7,7 +7,8 @@ part 'covid_prov.g.dart';
 @freezed
 class CovidProv with _$CovidProv {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory CovidProv({List<ListData?>? listData}) = _CovidProv;
+  const factory CovidProv({String? lastDate, List<ListData?>? listData}) =
+      _CovidProv;
   factory CovidProv.fromJson(Map<String, dynamic> json) =>
       _$CovidProvFromJson(json);
 }

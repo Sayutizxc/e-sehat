@@ -1,8 +1,11 @@
+import 'package:e_sehat/constant/colors.dart';
 import 'package:e_sehat/models/covid_update/covid_update.dart';
 import 'package:e_sehat/ui/global_widgets/poppins_text.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 
 import 'indicator.dart';
 
@@ -30,91 +33,100 @@ class PieChart2State extends State<CovidUpdateChart> {
           fontSize: 18,
           fontWeight: FontWeight.w600,
         ),
+        const Divider(
+          color: kOnSurface,
+        ),
         const SizedBox(height: 10),
-        AspectRatio(
-          aspectRatio: 2 / 1,
-          child: Row(
-            children: <Widget>[
-              const SizedBox(
-                height: 18,
-              ),
-              Expanded(
-                child: AspectRatio(
-                  aspectRatio: 1,
-                  child: PieChart(
-                    PieChartData(
-                        pieTouchData:
-                            PieTouchData(touchCallback: (pieTouchResponse) {
-                          setState(() {
-                            final desiredTouch = pieTouchResponse.touchInput
-                                    is! PointerExitEvent &&
-                                pieTouchResponse.touchInput is! PointerUpEvent;
-                            if (desiredTouch &&
-                                pieTouchResponse.touchedSection != null) {
-                              touchedIndex = pieTouchResponse
-                                  .touchedSection!.touchedSectionIndex;
-                            } else {
-                              touchedIndex = -1;
-                            }
-                          });
-                        }),
-                        borderData: FlBorderData(
-                          show: false,
-                        ),
-                        sectionsSpace: 0,
-                        centerSpaceRadius: 40,
-                        sections: showingSections(
-                            sembuh: widget.dataCovid.jumlahSembuh!,
-                            positif: widget.dataCovid.jumlahPositif!,
-                            dirawat: widget.dataCovid.jumlahDirawat!,
-                            meninggal: widget.dataCovid.jumlahMeninggal!)),
-                  ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Expanded(
+              child: AspectRatio(
+                aspectRatio: 4 / 4,
+                child: PieChart(
+                  PieChartData(
+                      pieTouchData:
+                          PieTouchData(touchCallback: (pieTouchResponse) {
+                        setState(() {
+                          final desiredTouch = pieTouchResponse.touchInput
+                                  is! PointerExitEvent &&
+                              pieTouchResponse.touchInput is! PointerUpEvent;
+                          if (desiredTouch &&
+                              pieTouchResponse.touchedSection != null) {
+                            touchedIndex = pieTouchResponse
+                                .touchedSection!.touchedSectionIndex;
+                          } else {
+                            touchedIndex = -1;
+                          }
+                        });
+                      }),
+                      borderData: FlBorderData(
+                        show: false,
+                      ),
+                      sectionsSpace: 0,
+                      centerSpaceRadius: 40,
+                      sections: showingSections(
+                          sembuh: widget.dataCovid.jumlahSembuh!,
+                          positif: widget.dataCovid.jumlahPositif!,
+                          dirawat: widget.dataCovid.jumlahDirawat!,
+                          meninggal: widget.dataCovid.jumlahMeninggal!)),
                 ),
               ),
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
+            ),
+            const SizedBox(width: 20),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const <Widget>[
+                Indicator(
+                  color: Colors.green,
+                  text: 'Sembuh',
+                ),
+                Indicator(
+                  color: Colors.orange,
+                  text: 'Positif',
+                ),
+                Indicator(
+                  color: Colors.blue,
+                  text: 'Dirawat',
+                ),
+                Indicator(
+                  color: Colors.red,
+                  text: 'Meninggal',
+                ),
+              ],
+            ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const <Widget>[
-                  Indicator(
-                    color: Colors.green,
-                    text: 'Sembuh',
-                    isSquare: true,
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Indicator(
-                    color: Colors.red,
-                    text: 'Positif',
-                    isSquare: true,
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Indicator(
-                    color: Colors.blue,
-                    text: 'Dirawat',
-                    isSquare: true,
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Indicator(
-                    color: Colors.orange,
-                    text: 'Meninggal',
-                    isSquare: true,
-                  ),
-                  SizedBox(
-                    height: 18,
-                  ),
+                children: [
+                  PoppinsText(
+                      "Sembuh : ${NumberFormat.decimalPattern('id').format(widget.dataCovid.jumlahSembuh!)}",
+                      textAlign: TextAlign.left),
+                  PoppinsText(
+                      "Positif : ${NumberFormat.decimalPattern('id').format(widget.dataCovid.jumlahPositif!)}",
+                      textAlign: TextAlign.left),
+                  PoppinsText(
+                      "Dirawat : ${NumberFormat.decimalPattern('id').format(widget.dataCovid.jumlahDirawat!)}"),
+                  PoppinsText(
+                      "Meninggal : ${NumberFormat.decimalPattern('id').format(widget.dataCovid.jumlahMeninggal!)}"),
                 ],
               ),
-              const SizedBox(
-                width: 28,
+            ),
+            const Expanded(
+              child: PoppinsText(
+                'Sumber : covid19.go.id',
+                color: Colors.white70,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
         const SizedBox(height: 10),
       ],
@@ -146,7 +158,7 @@ class PieChart2State extends State<CovidUpdateChart> {
           );
         case 1:
           return PieChartSectionData(
-            color: Colors.red,
+            color: Colors.orange,
             value: positif.toDouble(),
             title: '${(positif / total * 100).toStringAsFixed(0)}%',
             radius: radius,
@@ -168,7 +180,7 @@ class PieChart2State extends State<CovidUpdateChart> {
           );
         case 3:
           return PieChartSectionData(
-            color: Colors.orange,
+            color: Colors.red,
             value: meninggal.toDouble(),
             title: '${(meninggal / total * 100).toStringAsFixed(0)}%',
             radius: radius,
