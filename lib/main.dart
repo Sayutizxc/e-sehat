@@ -1,9 +1,9 @@
-import 'package:e_sehat/constant/colors.dart';
-import 'package:e_sehat/ui/global_widgets/scroll_behavior.dart';
-import 'package:e_sehat/ui/pages/artikel/list_artikel_page.dart';
-import 'package:e_sehat/ui/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'constant/colors.dart';
+import 'ui/global_widgets/scroll_behavior.dart';
+import 'ui/routes/router.gr.dart';
 
 class Logger extends ProviderObserver {
   @override
@@ -28,14 +28,17 @@ class Logger extends ProviderObserver {
 }
 
 void main() {
-  runApp(ProviderScope(observers: [Logger()], child: const MyApp()));
+  runApp(ProviderScope(observers: [Logger()], child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  final _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
       builder: (context, child) {
         /// Ini berfungsi untuk mematikan glow effect
         /// di setiap widget yang dapat discroll
@@ -52,13 +55,6 @@ class MyApp extends StatelessWidget {
           colorScheme:
               const ColorScheme.dark().copyWith(onSurface: kOnSurface)),
       themeMode: ThemeMode.dark,
-      initialRoute: '/',
-
-      /// ini adalah daftar semua route yang digunakan di aplikasi ini
-      routes: {
-        '/': (context) => const HomePage(),
-        '/list-artikel': (context) => const ListArtikelPage(),
-      },
     );
   }
 }

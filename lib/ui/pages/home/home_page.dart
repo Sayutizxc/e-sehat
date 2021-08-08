@@ -1,13 +1,16 @@
-import 'package:e_sehat/constant/colors.dart';
-import 'package:e_sehat/providers/kondisi_hari_ini_provider.dart';
-import 'package:e_sehat/ui/global_widgets/card_menu.dart';
-import 'package:e_sehat/ui/global_widgets/poppins_text.dart';
-import 'package:e_sehat/ui/pages/home/components/card_kata_bijak.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../../constant/colors.dart';
+import '../../../providers/kondisi_hari_ini_provider.dart';
+import '../../global_widgets/card_menu.dart';
+import '../../global_widgets/poppins_text.dart';
+import 'components/card_kata_bijak.dart';
+import '../../routes/router.gr.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -44,29 +47,32 @@ class HomePage extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  const Expanded(
-                    child: CardMenu(
-                      head: FaIcon(
-                        FontAwesomeIcons.virus,
-                        size: 50,
-                        color: Colors.red,
-                      ),
-                      body: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: PoppinsText(
-                          'Info\nCovid-19',
-                          maxLines: 2,
-                          textAlign: TextAlign.center,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () => context.pushRoute(const CovidHomeRoute()),
+                      child: const CardMenu(
+                        head: FaIcon(
+                          FontAwesomeIcons.virus,
+                          size: 50,
+                          color: Colors.red,
+                        ),
+                        body: Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: PoppinsText(
+                            'Info\nCovid-19',
+                            maxLines: 2,
+                            textAlign: TextAlign.center,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, '/list-artikel'),
-                    child: const Expanded(
-                      child: CardMenu(
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () => context.pushRoute(const ListArtikelRoute()),
+                      child: const CardMenu(
                         head: FaIcon(
                           FontAwesomeIcons.newspaper,
                           size: 50,

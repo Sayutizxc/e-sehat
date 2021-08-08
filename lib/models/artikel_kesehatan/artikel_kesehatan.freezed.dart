@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'artikel_kesehatan.dart';
 
@@ -134,14 +134,15 @@ class __$ArtikelKesehatanCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_ArtikelKesehatan
     with DiagnosticableTreeMixin
     implements _ArtikelKesehatan {
   const _$_ArtikelKesehatan({this.result, this.totalCount, this.nextPage});
 
   factory _$_ArtikelKesehatan.fromJson(Map<String, dynamic> json) =>
-      _$$_ArtikelKesehatanFromJson(json);
+      _$_$_ArtikelKesehatanFromJson(json);
 
   @override
   final List<Result?>? result;
@@ -193,7 +194,7 @@ class _$_ArtikelKesehatan
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ArtikelKesehatanToJson(this);
+    return _$_$_ArtikelKesehatanToJson(this);
   }
 }
 
@@ -590,7 +591,7 @@ class _$_Result with DiagnosticableTreeMixin implements _Result {
       this.attributes});
 
   factory _$_Result.fromJson(Map<String, dynamic> json) =>
-      _$$_ResultFromJson(json);
+      _$_$_ResultFromJson(json);
 
   @override
   final String? externalId;
@@ -738,7 +739,7 @@ class _$_Result with DiagnosticableTreeMixin implements _Result {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ResultToJson(this);
+    return _$_$_ResultToJson(this);
   }
 }
 
@@ -971,7 +972,7 @@ class _$_Attributes with DiagnosticableTreeMixin implements _Attributes {
       this.thumbnailUrlWebp});
 
   factory _$_Attributes.fromJson(Map<String, dynamic> json) =>
-      _$$_AttributesFromJson(json);
+      _$_$_AttributesFromJson(json);
 
   @override
   final String? imageUrlWebp;
@@ -1038,7 +1039,7 @@ class _$_Attributes with DiagnosticableTreeMixin implements _Attributes {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AttributesToJson(this);
+    return _$_$_AttributesToJson(this);
   }
 }
 
@@ -1203,7 +1204,7 @@ class _$_Category with DiagnosticableTreeMixin implements _Category {
   const _$_Category({this.externalId, this.name, this.slug, this.enabled});
 
   factory _$_Category.fromJson(Map<String, dynamic> json) =>
-      _$$_CategoryFromJson(json);
+      _$_$_CategoryFromJson(json);
 
   @override
   final String? externalId;
@@ -1260,7 +1261,7 @@ class _$_Category with DiagnosticableTreeMixin implements _Category {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CategoryToJson(this);
+    return _$_$_CategoryToJson(this);
   }
 }
 

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'covid_prov.dart';
 
@@ -110,7 +110,7 @@ class _$_CovidProv with DiagnosticableTreeMixin implements _CovidProv {
   const _$_CovidProv({this.listData});
 
   factory _$_CovidProv.fromJson(Map<String, dynamic> json) =>
-      _$$_CovidProvFromJson(json);
+      _$_$_CovidProvFromJson(json);
 
   @override
   final List<ListData?>? listData;
@@ -148,7 +148,7 @@ class _$_CovidProv with DiagnosticableTreeMixin implements _CovidProv {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CovidProvToJson(this);
+    return _$_$_CovidProvToJson(this);
   }
 }
 
@@ -411,7 +411,7 @@ class _$_ListData with DiagnosticableTreeMixin implements _ListData {
       this.penambahan});
 
   factory _$_ListData.fromJson(Map<String, dynamic> json) =>
-      _$$_ListDataFromJson(json);
+      _$_$_ListDataFromJson(json);
 
   @override
   final String? key;
@@ -505,7 +505,7 @@ class _$_ListData with DiagnosticableTreeMixin implements _ListData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ListDataToJson(this);
+    return _$_$_ListDataToJson(this);
   }
 }
 
@@ -660,7 +660,7 @@ class _$_JenisKelamin with DiagnosticableTreeMixin implements _JenisKelamin {
   const _$_JenisKelamin({this.key, this.docCount});
 
   factory _$_JenisKelamin.fromJson(Map<String, dynamic> json) =>
-      _$$_JenisKelaminFromJson(json);
+      _$_$_JenisKelaminFromJson(json);
 
   @override
   final String? key;
@@ -705,7 +705,7 @@ class _$_JenisKelamin with DiagnosticableTreeMixin implements _JenisKelamin {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_JenisKelaminToJson(this);
+    return _$_$_JenisKelaminToJson(this);
   }
 }
 
@@ -866,7 +866,7 @@ class _$_KelompokUmur with DiagnosticableTreeMixin implements _KelompokUmur {
   const _$_KelompokUmur({this.key, this.docCount, this.usia});
 
   factory _$_KelompokUmur.fromJson(Map<String, dynamic> json) =>
-      _$$_KelompokUmurFromJson(json);
+      _$_$_KelompokUmurFromJson(json);
 
   @override
   final String? key;
@@ -917,7 +917,7 @@ class _$_KelompokUmur with DiagnosticableTreeMixin implements _KelompokUmur {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_KelompokUmurToJson(this);
+    return _$_$_KelompokUmurToJson(this);
   }
 }
 
@@ -1035,7 +1035,8 @@ class __$UsiaCopyWithImpl<$Res> extends _$UsiaCopyWithImpl<$Res>
 class _$_Usia with DiagnosticableTreeMixin implements _Usia {
   const _$_Usia({this.value});
 
-  factory _$_Usia.fromJson(Map<String, dynamic> json) => _$$_UsiaFromJson(json);
+  factory _$_Usia.fromJson(Map<String, dynamic> json) =>
+      _$_$_UsiaFromJson(json);
 
   @override
   final num? value;
@@ -1072,7 +1073,7 @@ class _$_Usia with DiagnosticableTreeMixin implements _Usia {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsiaToJson(this);
+    return _$_$_UsiaToJson(this);
   }
 }
 
@@ -1212,7 +1213,7 @@ class _$_Penambahan with DiagnosticableTreeMixin implements _Penambahan {
   const _$_Penambahan({this.positif, this.sembuh, this.meninggal});
 
   factory _$_Penambahan.fromJson(Map<String, dynamic> json) =>
-      _$$_PenambahanFromJson(json);
+      _$_$_PenambahanFromJson(json);
 
   @override
   final num? positif;
@@ -1264,7 +1265,7 @@ class _$_Penambahan with DiagnosticableTreeMixin implements _Penambahan {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PenambahanToJson(this);
+    return _$_$_PenambahanToJson(this);
   }
 }
 

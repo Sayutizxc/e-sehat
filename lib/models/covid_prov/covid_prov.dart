@@ -1,5 +1,5 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'covid_prov.freezed.dart';
 part 'covid_prov.g.dart';

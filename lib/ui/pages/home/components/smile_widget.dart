@@ -1,6 +1,6 @@
-import 'package:e_sehat/providers/kondisi_hari_ini_provider.dart';
-import 'package:e_sehat/ui/global_widgets/card_menu.dart';
-import 'package:e_sehat/ui/global_widgets/poppins_text.dart';
+import '../../../../providers/kondisi_hari_ini_provider.dart';
+import '../../../global_widgets/card_menu.dart';
+import '../../../global_widgets/poppins_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

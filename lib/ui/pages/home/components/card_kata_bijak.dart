@@ -1,8 +1,9 @@
-import 'package:e_sehat/models/kata_bijak/kata_bijak.dart';
-import 'package:e_sehat/ui/global_widgets/card_menu.dart';
-import 'package:e_sehat/ui/global_widgets/poppins_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../../models/kata_bijak/kata_bijak.dart';
+import '../../../global_widgets/card_menu.dart';
+import '../../../global_widgets/poppins_text.dart';
 
 class CardKataBijak extends ConsumerWidget {
   const CardKataBijak({

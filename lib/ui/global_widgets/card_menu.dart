@@ -1,4 +1,4 @@
-import 'package:e_sehat/constant/colors.dart';
+import '../../constant/colors.dart';
 import 'package:flutter/material.dart';
 
 class CardMenu extends StatelessWidget {

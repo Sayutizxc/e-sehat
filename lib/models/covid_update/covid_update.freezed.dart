@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'covid_update.dart';
 
@@ -124,7 +124,7 @@ class _$_CovidUpdate with DiagnosticableTreeMixin implements _CovidUpdate {
   _$_CovidUpdate({required this.update});
 
   factory _$_CovidUpdate.fromJson(Map<String, dynamic> json) =>
-      _$$_CovidUpdateFromJson(json);
+      _$_$_CovidUpdateFromJson(json);
 
   @override
   final Update update;
@@ -161,7 +161,7 @@ class _$_CovidUpdate with DiagnosticableTreeMixin implements _CovidUpdate {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CovidUpdateToJson(this);
+    return _$_$_CovidUpdateToJson(this);
   }
 }
 
@@ -286,7 +286,7 @@ class _$_Update with DiagnosticableTreeMixin implements _Update {
   const _$_Update({required this.total});
 
   factory _$_Update.fromJson(Map<String, dynamic> json) =>
-      _$$_UpdateFromJson(json);
+      _$_$_UpdateFromJson(json);
 
   @override
   final Total total;
@@ -323,7 +323,7 @@ class _$_Update with DiagnosticableTreeMixin implements _Update {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UpdateToJson(this);
+    return _$_$_UpdateToJson(this);
   }
 }
 
@@ -487,7 +487,7 @@ class _$_Total with DiagnosticableTreeMixin implements _Total {
       required this.jumlahMeninggal});
 
   factory _$_Total.fromJson(Map<String, dynamic> json) =>
-      _$$_TotalFromJson(json);
+      _$_$_TotalFromJson(json);
 
   @override
   final int? jumlahPositif;
@@ -547,7 +547,7 @@ class _$_Total with DiagnosticableTreeMixin implements _Total {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TotalToJson(this);
+    return _$_$_TotalToJson(this);
   }
 }
 

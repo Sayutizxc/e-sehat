@@ -12,6 +12,7 @@ class PoppinsText extends StatelessWidget {
     this.fontWeight,
     this.maxLines,
     this.fontStyle,
+    this.overflow,
   }) : super(key: key);
   final int? maxLines;
   final String text;
@@ -20,6 +21,7 @@ class PoppinsText extends StatelessWidget {
   final FontStyle? fontStyle;
   final TextAlign? textAlign;
   final FontWeight? fontWeight;
+  final TextOverflow? overflow;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +36,7 @@ class PoppinsText extends StatelessWidget {
       ),
       textAlign: textAlign,
       maxLines: maxLines,
+      overflow: overflow,
     );
   }
 }

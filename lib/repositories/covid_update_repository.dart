@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:e_sehat/constant/api.dart';
-import 'package:e_sehat/models/covid_update/covid_update.dart';
-import 'package:e_sehat/repositories/base_api.dart';
+import '../constant/api.dart';
+import '../models/covid_update/covid_update.dart';
+import 'base_api.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final covidUpdateProvider = Provider<CovidUpdateRepository>((ref) {
+final covidUpdateRepositoryProvider = Provider<CovidUpdateRepository>((ref) {
   return CovidUpdateRepository();
 });
 

@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:e_sehat/constant/api.dart';
-import 'package:e_sehat/models/artikel_kesehatan/artikel_kesehatan.dart';
-import 'package:e_sehat/repositories/base_api.dart';
+import '../constant/api.dart';
+import '../models/artikel_kesehatan/artikel_kesehatan.dart';
+import 'base_api.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final artikelKesehatanProvider = Provider<ArtikelKesehatanRepository>((ref) {
+final artikelKesehatanRepositoryProvider =
+    Provider<ArtikelKesehatanRepository>((ref) {
   return ArtikelKesehatanRepository();
 });
 

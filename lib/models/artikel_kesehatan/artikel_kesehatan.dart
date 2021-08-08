@@ -6,6 +6,7 @@ part 'artikel_kesehatan.g.dart';
 
 @freezed
 class ArtikelKesehatan with _$ArtikelKesehatan {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory ArtikelKesehatan({
     List<Result?>? result,
     int? totalCount,

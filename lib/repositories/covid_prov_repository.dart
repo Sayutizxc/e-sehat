@@ -1,9 +1,14 @@
 import 'package:dio/dio.dart';
-import 'package:e_sehat/constant/api.dart';
-import 'package:e_sehat/models/covid_prov/covid_prov.dart';
-import 'package:e_sehat/repositories/base_api.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../constant/api.dart';
+import '../models/covid_prov/covid_prov.dart';
+import 'base_api.dart';
 
-class CovidUpdateRepository extends BaseApi {
+final covidPovRepositoryProvider = Provider<CovidPovRepository>((ref) {
+  return CovidPovRepository();
+});
+
+class CovidPovRepository extends BaseApi {
   @override
   Future<CovidProv> getDataFromApi() async {
     try {
