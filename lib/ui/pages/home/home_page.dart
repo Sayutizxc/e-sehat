@@ -93,30 +93,33 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              CardMenu(
-                head: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        PoppinsText(
-                          'Riwayat Sakit',
-                          fontSize: 20,
-                          maxLines: 1,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        PoppinsText(
-                          'Pantau terus riwayat sakitmu',
-                          color: Colors.white70,
-                        ),
-                      ],
-                    ),
-                    const FaIcon(
-                      FontAwesomeIcons.stethoscope,
-                      size: 32,
-                    )
-                  ],
+              GestureDetector(
+                onTap: () => context.pushRoute(const RiwayatSakitRoute()),
+                child: CardMenu(
+                  head: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          PoppinsText(
+                            'Riwayat Sakit',
+                            fontSize: 20,
+                            maxLines: 1,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          PoppinsText(
+                            'Pantau terus riwayat sakitmu',
+                            color: Colors.white70,
+                          ),
+                        ],
+                      ),
+                      const FaIcon(
+                        FontAwesomeIcons.stethoscope,
+                        size: 32,
+                      )
+                    ],
+                  ),
                 ),
               ),
               CardMenu(

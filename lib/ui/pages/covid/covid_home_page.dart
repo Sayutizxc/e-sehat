@@ -9,7 +9,6 @@ import 'package:e_sehat/ui/pages/covid/components/covid_update_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class CovidHomePage extends ConsumerWidget {
@@ -58,67 +57,6 @@ class CovidMenuCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         CardMenu(head: CovidUpdateChart(dataCovid: covidUpdate.update.total)),
-        // Row(
-        //   mainAxisSize: MainAxisSize.max,
-        //   children: [
-        //     Expanded(
-        //       child: CardMenu(
-        //         head: Row(
-        //           mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //           children: const [
-        //             Expanded(
-        //               flex: 1,
-        //               child: FaIcon(
-        //                 FontAwesomeIcons.virus,
-        //                 size: 40,
-        //               ),
-        //             ),
-        //             Expanded(
-        //               flex: 2,
-        //               child: Padding(
-        //                 padding: EdgeInsets.only(right: 8.0),
-        //                 child: PoppinsText(
-        //                   'Kasus Covid\nKalsel',
-        //                   fontSize: 20,
-        //                   maxLines: 2,
-        //                   fontWeight: FontWeight.w600,
-        //                 ),
-        //               ),
-        //             ),
-        //           ],
-        //         ),
-        //       ),
-        //     ),
-        //     Expanded(
-        //       child: CardMenu(
-        //         head: Row(
-        //           mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //           children: const [
-        //             Expanded(
-        //               flex: 2,
-        //               child: Padding(
-        //                 padding: EdgeInsets.only(right: 8.0),
-        //                 child: PoppinsText(
-        //                   'Rumah Sakit\nRujukan Covid',
-        //                   fontSize: 20,
-        //                   maxLines: 2,
-        //                   fontWeight: FontWeight.w600,
-        //                 ),
-        //               ),
-        //             ),
-        //             Expanded(
-        //               flex: 1,
-        //               child: FaIcon(
-        //                 FontAwesomeIcons.hospital,
-        //                 size: 40,
-        //               ),
-        //             )
-        //           ],
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
         ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),

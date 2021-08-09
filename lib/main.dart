@@ -1,5 +1,8 @@
+import 'package:e_sehat/models/riwayat_sakit/riwayat_sakit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 import 'constant/colors.dart';
 import 'ui/global_widgets/scroll_behavior.dart';
@@ -27,7 +30,12 @@ class Logger extends ProviderObserver {
   }
 }
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  initializeDateFormatting();
+  Hive.registerAdapter(RiwayatSakitAdapter());
+  await Hive.openBox<RiwayatSakit>('boxRiwayatSakit');
   runApp(ProviderScope(observers: [Logger()], child: MyApp()));
 }
 
