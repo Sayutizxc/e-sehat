@@ -26,6 +26,11 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: kPrimaryColor,
+        actions: [
+          IconButton(
+              onPressed: () => context.pushRoute(const InfoRoute()),
+              icon: const FaIcon(FontAwesomeIcons.addressCard))
+        ],
       ),
       body: SafeArea(
           child: SizedBox(
@@ -122,30 +127,33 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              CardMenu(
-                head: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    const FaIcon(
-                      FontAwesomeIcons.calculator,
-                      size: 32,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        PoppinsText(
-                          'Kalkulator BMI',
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          maxLines: 1,
-                        ),
-                        PoppinsText(
-                          'Ayo hitung indeks massa tubuhmu',
-                          color: Colors.white70,
-                        ),
-                      ],
-                    ),
-                  ],
+              GestureDetector(
+                onTap: () => context.pushRoute(const BmiHomeRoute()),
+                child: CardMenu(
+                  head: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const FaIcon(
+                        FontAwesomeIcons.calculator,
+                        size: 32,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          PoppinsText(
+                            'Kalkulator BMI',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            maxLines: 1,
+                          ),
+                          PoppinsText(
+                            'Ayo hitung indeks massa tubuhmu',
+                            color: Colors.white70,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const CardKataBijak(),

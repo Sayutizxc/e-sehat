@@ -9,8 +9,10 @@ import 'package:flutter/material.dart' as _i2;
 
 import '../pages/artikel/detail_artikel_page.dart' as _i5;
 import '../pages/artikel/list_artikel_page.dart' as _i4;
+import '../pages/bmi/bmi_home_page.dart' as _i10;
 import '../pages/covid/covid_home_page.dart' as _i6;
 import '../pages/home/home_page.dart' as _i3;
+import '../pages/info/info_page.dart' as _i9;
 import '../pages/riwayat_sakit/detail_riwayat_sakit_page.dart' as _i8;
 import '../pages/riwayat_sakit/riwayat_sakit_page.dart' as _i7;
 
@@ -57,6 +59,16 @@ class AppRouter extends _i1.RootStackRouter {
               detailSakit: args.detailSakit,
               tanggalSakit: args.tanggalSakit,
               keySakit: args.keySakit);
+        }),
+    InfoRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i9.InfoPage();
+        }),
+    BmiHomeRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i10.BmiHomePage();
         })
   };
 
@@ -68,7 +80,9 @@ class AppRouter extends _i1.RootStackRouter {
         _i1.RouteConfig(CovidHomeRoute.name, path: '/covid-home-page'),
         _i1.RouteConfig(RiwayatSakitRoute.name, path: '/riwayat-sakit-page'),
         _i1.RouteConfig(DetailRiwayatSakitRoute.name,
-            path: '/detail-riwayat-sakit-page')
+            path: '/detail-riwayat-sakit-page'),
+        _i1.RouteConfig(InfoRoute.name, path: '/info-page'),
+        _i1.RouteConfig(BmiHomeRoute.name, path: '/bmi-home-page')
       ];
 }
 
@@ -150,4 +164,16 @@ class DetailRiwayatSakitRouteArgs {
   final DateTime? tanggalSakit;
 
   final String? keySakit;
+}
+
+class InfoRoute extends _i1.PageRouteInfo {
+  const InfoRoute() : super(name, path: '/info-page');
+
+  static const String name = 'InfoRoute';
+}
+
+class BmiHomeRoute extends _i1.PageRouteInfo {
+  const BmiHomeRoute() : super(name, path: '/bmi-home-page');
+
+  static const String name = 'BmiHomeRoute';
 }

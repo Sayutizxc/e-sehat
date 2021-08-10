@@ -22,7 +22,11 @@ class ListArtikelPage extends ConsumerWidget {
       body: SafeArea(
         child: listArtikel.when(
           loading: () => const ShimmerArtikel(),
-          error: (e, st) => ErrorState(error: e.toString()),
+          error: (e, st) => ErrorState(
+            error: e.toString(),
+            onPressed: () =>
+                ref.read(artikelKesehatanProvider.notifier).refresh(),
+          ),
           data: (data) => RefreshIndicator(
             onRefresh: () =>
                 ref.read(artikelKesehatanProvider.notifier).refresh(),

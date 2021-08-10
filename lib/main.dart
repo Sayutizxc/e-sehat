@@ -8,27 +8,27 @@ import 'constant/colors.dart';
 import 'ui/global_widgets/scroll_behavior.dart';
 import 'ui/routes/router.gr.dart';
 
-class Logger extends ProviderObserver {
-  @override
-  void didUpdateProvider(
-    ProviderBase provider,
-    Object? previousValue,
-    Object? newValue,
-    ProviderContainer container,
-  ) {
-    // ignore: avoid_print
-    print('''
--------------------------------------------------------------------
-{=================================================================}
+// class Logger extends ProviderObserver {
+//   @override
+//   void didUpdateProvider(
+//     ProviderBase provider,
+//     Object? previousValue,
+//     Object? newValue,
+//     ProviderContainer container,
+//   ) {
+//     // ignore: avoid_print
+//     print('''
+// -------------------------------------------------------------------
+// {=================================================================}
 
-  "provider": "${provider.name ?? provider.runtimeType}",
-  "newValue": "$newValue"
+//   "provider": "${provider.name ?? provider.runtimeType}",
+//   "newValue": "$newValue"
 
-{=================================================================}
--------------------------------------------------------------------
-''');
-  }
-}
+// {=================================================================}
+// -------------------------------------------------------------------
+// ''');
+//   }
+// }
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,7 +36,7 @@ Future<void> main() async {
   initializeDateFormatting();
   Hive.registerAdapter(RiwayatSakitAdapter());
   await Hive.openBox<RiwayatSakit>('boxRiwayatSakit');
-  runApp(ProviderScope(observers: [Logger()], child: MyApp()));
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

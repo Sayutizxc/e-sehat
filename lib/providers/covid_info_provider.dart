@@ -3,7 +3,8 @@ import 'package:e_sehat/repositories/covid_update_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final covidInfoProvider =
-    StateNotifierProvider<CovidNotifier, AsyncValue<List<Object>>>((ref) {
+    StateNotifierProvider.autoDispose<CovidNotifier, AsyncValue<List<Object>>>(
+        (ref) {
   return CovidNotifier(ref.read);
 });
 
@@ -26,6 +27,7 @@ class CovidNotifier extends StateNotifier<AsyncValue<List<Object>>> {
   }
 
   Future<void> refresh() async {
+    state = const AsyncLoading();
     try {
       var response = await Future.wait([
         _read(covidUpdateRepositoryProvider).getDataFromApi(),

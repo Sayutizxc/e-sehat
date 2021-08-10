@@ -15,6 +15,9 @@ class CovidPovRepository extends BaseApi {
       var result = await dio.get(apiCovidProv);
       return CovidProv.fromJson(result.data);
     } on DioError catch (e) {
+      if (e.type == DioErrorType.other) {
+        throw 'Tidak ada koneksi internet';
+      }
       if (e.response?.statusCode == 404) {
         throw 'Data tidak ditemukan';
       } else {

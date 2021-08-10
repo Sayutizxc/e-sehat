@@ -25,6 +25,7 @@ class ArtikelKesehatanNotifier
   }
 
   Future<void> refresh() async {
+    state = const AsyncLoading();
     try {
       var response =
           await _read(artikelKesehatanRepositoryProvider).getDataFromApi();

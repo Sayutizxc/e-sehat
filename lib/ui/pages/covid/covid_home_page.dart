@@ -30,7 +30,14 @@ class CovidHomePage extends ConsumerWidget {
               loading: () => SizedBox(
                   height: _height,
                   child: const Center(child: CircularProgressIndicator())),
-              error: (e, st) => ErrorState(error: e.toString()),
+              error: (e, st) => SizedBox(
+                  height: _height,
+                  child: Center(
+                      child: ErrorState(
+                    error: e.toString(),
+                    onPressed: () =>
+                        ref.read(covidInfoProvider.notifier).refresh(),
+                  ))),
               data: (data) => CovidMenuCard(
                 covidUpdate: data[0] as CovidUpdate,
                 covidProv: data[1] as CovidProv,

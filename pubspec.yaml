@@ -33,6 +33,16 @@ dev_dependencies:
   freezed:
   hive_generator: ^1.1.0
   json_serializable:
+  flutter_native_splash: ^1.2.1
+  flutter_launcher_icons: '^0.9.1'
+
+flutter_icons:
+  android: 'launcher_icon'
+  ios: true
+  image_path: 'assets/icon/icon.png'
+
+flutter_native_splash:
+  color: '#232433'
 
 flutter:
   uses-material-design: true
