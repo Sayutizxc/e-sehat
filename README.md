@@ -1,16 +1,16 @@
-# e_sehat
+# Aplikasi eSehat
 
-A new Flutter project.
+Aplikasi ini dibuat untuk memenuhi tugas uas PBO2.
+Fitur :
 
-## Getting Started
+ 1. Info Covid.
+ 2. Artikel Kesehatan.
+ 3. Simpan Riwayat Sakit.
+ 4. Kalkulator BMI.
+ 5. Random Quotes tentang kesehatan.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![enter image description here](https://github.com/Sayutizxc/e_sehat/blob/master/ss/home.png)
+![enter image description here](https://github.com/Sayutizxc/e_sehat/blob/master/ss/Info-covid.png)
+![enter image description here](https://github.com/Sayutizxc/e_sehat/blob/master/ss/Artikel-kesehatan.png)
+![enter image description here](https://github.com/Sayutizxc/e_sehat/blob/master/ss/bmi.png)
+![enter image description here](https://github.com/Sayutizxc/e_sehat/blob/master/ss/riwayat-kesehatan.png)
